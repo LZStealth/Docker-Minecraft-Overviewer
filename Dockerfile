@@ -9,7 +9,7 @@ ENV APACHE_RUN_GROUP www-data
 RUN apt-get update && \
     apt-get install -y wget && \
     apt-get install -y cron && \
-    noninteractive apt-get -y install apache2 libapache2-mod-php5 php5-mysql php5-gd php-pear php-apc php5-curl php5-ldap && \
+    apt-get -y install apache2 libapache2-mod-php5 php5-mysql php5-gd php-pear php-apc php5-curl php5-ldap && \
     echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list && \
     echo "deb http://overviewer.org/debian ./" >> /etc/apt/sources.list && \
     apt-get update
