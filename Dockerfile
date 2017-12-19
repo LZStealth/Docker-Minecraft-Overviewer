@@ -19,6 +19,4 @@ RUN chmod 0644 /etc/cron.d/overviewer
 
 RUN wget ${MINECRAFT_DOWNLOAD_URL} -P /versions/
 
-RUN overviewer.py --config=/minecraft/overviewer.cfg --genpoi > /proc/1/fd/1 2>/proc/1/fd/2 && overviewer.py --config=/minecraft/overviewer.cfg --genpoi > /proc/1/fd/1 2>/proc/1/fd/2
-
 CMD ["cron", "-f"]
