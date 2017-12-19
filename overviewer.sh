@@ -1,1 +1,4 @@
-overviewer.py --config=/minecraft/overviewer.cfg && overviewer.py --config=/minecraft/overviewer.cfg --genpoi
+overviewer.py --config=/minecraft/overviewer.cfg &&
+echo "Land Pass Complete" &&
+overviewer.py --config=/minecraft/overviewer.cfg --genpoi &&
+echo "POI Pass Complete"
