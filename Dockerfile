@@ -15,7 +15,4 @@ RUN apt-get install -y --force-yes \
     
 RUN wget ${MINECRAFT_DOWNLOAD_URL} -P /versions/
 
-RUN chown -R 1:1 /home/daemon
-ENV HOME=/home/daemon
-USER 1:1
 ENTRYPOINT ["/bin/bash", "-c","overviewer.py --config=/minecraft/overviewer.cfg;overviewer.py --config=/minecraft/overviewer.cfg --genpoi"]
