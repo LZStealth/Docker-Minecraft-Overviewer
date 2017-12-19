@@ -1,6 +1,8 @@
 FROM ubuntu:14.04
 
-ENV VERSION=1.12.2
+ARG MINECRAFT_URL=https://s3.amazonaws.com/Minecraft.Download/versions
+ARG MINECRAFT_VERSION=1.12.2
+ENV MINECRAFT_DOWNLOAD_URL=${MINECRAFT_URL}/${MINECRAFT_VERSION}/${MINECRAFT_VERSION}.jar
 
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list && \
     echo "deb http://overviewer.org/debian ./" >> /etc/apt/sources.list && \
@@ -9,7 +11,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt
 RUN apt-get install -y --force-yes \
     minecraft-overviewer
 
-ADD https://s3.amazonaws.com/Minecraft.Download/versions/${VERSION}/minecraft_server.${VERSION}.jar /home/daemon/.minecraft/versions/${VERSION}/
+RUN /home/daemon/.minecraft/versions/${MINECRAFT_VERSION}/ ${MINECRAFT_DOWNLOAD_URL}
 RUN chown -R 1:1 /home/daemon
 ENV HOME=/home/daemon
 USER 1:1
