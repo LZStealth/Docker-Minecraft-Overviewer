@@ -1,1 +1,1 @@
-0 0 * * * root ./overviewer.sh
+0 0 * * * root ./overviewer.sh >> /log.txt
