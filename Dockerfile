@@ -13,7 +13,7 @@ RUN apt-get update && \
 RUN apt-get install -y --force-yes \
     minecraft-overviewer
     
-RUN wget ${MINECRAFT_DOWNLOAD_URL} -P /home/daemon/.minecraft/versions/${MINECRAFT_VERSION}/
+RUN wget ${MINECRAFT_DOWNLOAD_URL} -P /versions/
 
 RUN chown -R 1:1 /home/daemon
 ENV HOME=/home/daemon
