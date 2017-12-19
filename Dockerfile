@@ -14,7 +14,8 @@ RUN apt-get update && \
 RUN apt-get install -y --force-yes \
     minecraft-overviewer
 
-ADD crontab /etc/cron.d/overviewer
+COPY overviewer.sh /
+COPY crontab /etc/cron.d/overviewer
 RUN chmod +x /etc/cron.d/overviewer
 
 RUN wget ${MINECRAFT_DOWNLOAD_URL} -P /versions/
