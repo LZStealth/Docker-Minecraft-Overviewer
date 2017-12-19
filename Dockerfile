@@ -9,7 +9,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt
 RUN apt-get install -y --force-yes \
     minecraft-overviewer
 
-ADD https://s3.amazonaws.com/Minecraft.Download/versions/$VERSION/minecraft_server.$VERSION.jar /home/daemon/.minecraft/versions/$VERSION/
+ADD https://s3.amazonaws.com/Minecraft.Download/versions/${VERSION}/minecraft_server.${VERSION}.jar /home/daemon/.minecraft/versions/${VERSION}/
 RUN chown -R 1:1 /home/daemon
 ENV HOME=/home/daemon
 USER 1:1
