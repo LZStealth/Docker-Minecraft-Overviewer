@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get install -y wget && \
     echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list && \
     echo "deb http://overviewer.org/debian ./" >> /etc/apt/sources.list && \
-    apt-get update && \
+    apt-get update
 
 RUN apt-get install -y --force-yes \
     minecraft-overviewer
