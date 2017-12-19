@@ -11,7 +11,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt
 RUN apt-get install -y --force-yes \
     minecraft-overviewer
 
-RUN wget -P /home/daemon/.minecraft/versions/${MINECRAFT_VERSION}/ ${MINECRAFT_DOWNLOAD_URL}
+ADD ${MINECRAFT_DOWNLOAD_URL} /home/daemon/.minecraft/versions/${MINECRAFT_VERSION}/ 
 RUN chown -R 1:1 /home/daemon
 ENV HOME=/home/daemon
 USER 1:1
