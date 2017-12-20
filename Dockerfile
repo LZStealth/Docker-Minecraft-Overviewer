@@ -16,7 +16,7 @@ RUN apt-get install -y --force-yes \
     minecraft-overviewer
 
 COPY overviewer.sh /
-RUN chmod 644 overviewer.sh
+RUN chmod 755 overviewer.sh
 COPY crontab /etc/cron.d/overviewer
 RUN chmod 644 /etc/cron.d/overviewer
 
