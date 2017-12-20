@@ -1,1 +1,1 @@
-15 0 * * * root /overviewer.sh >> /log.txt 2>&1
+30 0 * * * root /overviewer.sh >> /log.txt 2>&1
