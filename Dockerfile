@@ -15,10 +15,10 @@ RUN apt-get install -y --force-yes \
     minecraft-overviewer
 
 COPY overviewer.sh /
-COPY crontab /etc/crontab
-RUN chmod +x /etc/crontab
+COPY crontab /etc/cron.d/overviewer
+RUN chmod +x /etc/cron.d/overviewer
 RUN touch /log.txt
 
 RUN wget ${MINECRAFT_DOWNLOAD_URL} -P /versions/
 
-CMD ["cron", "-f"]
+CMD cron && tail -f /log.txt
