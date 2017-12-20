@@ -21,4 +21,4 @@ RUN chmod +x /etc/cron.d/overviewer
 
 RUN wget ${MINECRAFT_DOWNLOAD_URL} -P /versions/
 
-CMD ['cron', '-f']
+CMD ["cron", "-f"]
