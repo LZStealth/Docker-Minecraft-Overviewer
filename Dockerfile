@@ -15,4 +15,4 @@ RUN apt-get install -y --force-yes \
 
 RUN wget ${MINECRAFT_DOWNLOAD_URL} -P /versions/
 
-ENTRYPOINT ["/bin/bash", "-c","overviewer.py --config=/minecraft/overviewer.cfg;overviewer.py --config=/minecraft/overviewer.cfg --genpoi;chown www-data -R /mcmap"]
+ENTRYPOINT ["/bin/bash", "-c","overviewer.py --config=/minecraft/overviewer.cfg;overviewer.py --config=/minecraft/overviewer.cfg --genpoi"]
