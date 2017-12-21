@@ -13,6 +13,9 @@ RUN apt-get update && \
 
 RUN apt-get install -y --force-yes \
     minecraft-overviewer
+    
+COPY start-overviewer.sh /
+RUN chmod 766 start-overviewer.sh
 
 RUN wget ${MINECRAFT_DOWNLOAD_URL} -P /versions/
 
