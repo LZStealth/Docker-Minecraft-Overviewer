@@ -1,5 +1,7 @@
 if [ "$RENDER" == true ]; then
-overviewer.py --config=/minecraft/overviewer.cfg
+  overviewer.py --config=/minecraft/overviewer.cfg
+fi
 
 if [ "$POI" == true ]; then
-overviewer.py --config=/minecraft/overviewer.cfg --genpoi
+  overviewer.py --config=/minecraft/overviewer.cfg --genpoi
+fi
