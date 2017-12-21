@@ -16,4 +16,4 @@ RUN apt-get install -y --force-yes \
 
 RUN wget ${MINECRAFT_DOWNLOAD_URL} -P /versions/
 
-RUN bin/bash -c" ${COMMAND}
+RUN bin/bash -c ${COMMAND}
