@@ -1,1 +1,1 @@
-$COMMAND
+exec $COMMAND
