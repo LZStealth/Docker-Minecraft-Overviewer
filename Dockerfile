@@ -14,8 +14,7 @@ RUN apt-get update && \
 
 RUN apt-get install -y --force-yes \
     minecraft-overviewer
-RUN umask 022
-    
+
 COPY start-overviewer.sh /
 RUN chmod 766 start-overviewer.sh
 
