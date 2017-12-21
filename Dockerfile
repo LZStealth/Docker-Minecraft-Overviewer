@@ -3,6 +3,7 @@ FROM ubuntu:14.04
 ENV MINECRAFT_URL=https://s3.amazonaws.com/Minecraft.Download/versions
 ENV MINECRAFT_VERSION=1.12.2
 ENV MINECRAFT_DOWNLOAD_URL=${MINECRAFT_URL}/${MINECRAFT_VERSION}/${MINECRAFT_VERSION}.jar
+ENV COMMAND="overviewer.py --config=/minecraft/overviewer.cfg;overviewer.py --config=/minecraft/overviewer.cfg --genpoi"
 
 RUN apt-get update && \
     apt-get install -y wget && \
@@ -15,4 +16,4 @@ RUN apt-get install -y --force-yes \
 
 RUN wget ${MINECRAFT_DOWNLOAD_URL} -P /versions/
 
-ENTRYPOINT ["/bin/bash", "-c","overviewer.py --config=/minecraft/overviewer.cfg;overviewer.py --config=/minecraft/overviewer.cfg --genpoi"]
+RUN bin/bash -c" ${COMMAND}
