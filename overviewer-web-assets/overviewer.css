@@ -51,6 +51,10 @@ body {
     font-family: Roboto, Arial, sans-serif;
     font-size: 11px;
     padding: 7px;
+    position: fixed;
+    top: 48px;
+    left: 10px;
+    width: 166px;
 }
 
 .customControl > div.top {
@@ -61,15 +65,17 @@ body {
     color: rgb(86, 86, 86);
     font-family: Roboto, Arial, sans-serif;
     font-size: 11px;
-    padding: 7px;
+    padding: 8px;
     background-color: white;
-    width:150px;
+    width: 150px;
+    position: fixed;
+    top: 85px;
+    left: 10px;
 }
 
 .customControl > div.top:hover {
     /*border: 1px solid #678AC7;*/
     border-bottom: 0;
-
 }
 
 .customControl > div.top-active {
@@ -83,7 +89,7 @@ body {
     color: rgb(86, 86, 86);
     font-family: Roboto, Arial, sans-serif;
     font-size: 11px;
-    padding: 7px;
+    padding: 8px;
 }
 
 .customControl > div.dropDown {
@@ -95,11 +101,15 @@ body {
     color: rgb(86, 86, 86);
     font-family: Roboto, Arial, sans-serif;
     font-size: 11px;
-    padding: 7px;
+    padding: 5px;
     font-size: 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.347656) 2px 2px 3px;
     display: none;
+    position: fixed;
+    top: 113px;
+    left: 10px;
+    width: 156px;
 }
 
 .customControl > div.button {
@@ -109,15 +119,27 @@ body {
     display: none;
 }
 
+#coordsDiv {
+  background-color: #fff; /* fallback */
+  background-color: rgba(255,255,255,0.55);
+  border: 0;
+  border-radius: 2px 2px;
+  box-shadow: rgba(0, 0, 0, 0.347656) 2px 2px 3px;
+  text-align: center;
+  color: rgb(86, 86, 86);
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  padding: 2px;
+  background-color: white;
+  margin-bottom: 3px;
+}
 
-#link, #coordsDiv, #progressDiv {
+#link, #progressDiv {
     background-color: #fff; /* fallback */
     background-color: rgba(255,255,255,0.55);
-    border: 1px solid rgb(0, 0, 0);
     font-size: 9pt;
     padding-left: 2px;
     padding-right: 2px;
-    margin-bottom: 1px;
 }
 
 #link:hover {
