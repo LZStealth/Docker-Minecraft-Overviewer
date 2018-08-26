@@ -1,8 +1,6 @@
 FROM ubuntu:14.04
 
-ENV MINECRAFT_URL=https://s3.amazonaws.com/Minecraft.Download/versions
-ENV MINECRAFT_VERSION=1.13.1
-ENV MINECRAFT_DOWNLOAD_URL=${MINECRAFT_URL}/${MINECRAFT_VERSION}/${MINECRAFT_VERSION}.jar
+ENV MINECRAFT_DOWNLOAD_URL=https://launcher.mojang.com/mc/game/1.13.1/client/8de235e5ec3a7fce168056ea395d21cbdec18d7c/client.jar
 ENV RENDER=true
 ENV POI=true
 
