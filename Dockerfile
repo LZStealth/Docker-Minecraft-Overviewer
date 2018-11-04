@@ -26,4 +26,4 @@ RUN chmod 766 /start-overviewer.sh
 
 RUN wget ${MINECRAFT_DOWNLOAD_URL} -P /versions/
 
-ENTRYPOINT ["bin/bash", "-c", "/start-overviewer.sh"]
+ENTRYPOINT ["/bin/bash", "-c", "/start-overviewer.sh"]
