@@ -22,7 +22,7 @@ RUN git checkout minecraft113
 RUN python2 setup.py build
 
 COPY start-overviewer.sh /
-RUN chmod 766 start-overviewer.sh
+RUN chmod 766 /start-overviewer.sh
 
 RUN wget ${MINECRAFT_DOWNLOAD_URL} -P /versions/
 
