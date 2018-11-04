@@ -14,7 +14,10 @@ RUN apt-get update && \
     wget \
 && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/gmcnew/Minecraft-Overviewer.git .
+RUN mkdir /tmp/overviewer
+WORKDIR /tmp/overviewer
+
+RUN git clone https://github.com/overviewer/Minecraft-Overviewer.git .
 RUN git checkout minecraft113
 RUN python2 setup.py build
 
