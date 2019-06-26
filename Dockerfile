@@ -7,9 +7,9 @@ ENV POI=true
 RUN apt-get update && \
     apt-get update && apt-get install -y \
     build-essential \
-    python-pil \
-    python-dev \
-    python-numpy \
+    python3-pil \
+    python3-dev \
+    python3-numpy \
     git \
     wget \
 && rm -rf /var/lib/apt/lists/*
