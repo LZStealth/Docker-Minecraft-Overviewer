@@ -18,7 +18,7 @@ RUN mkdir /tmp/overviewer
 WORKDIR /tmp/overviewer
 
 RUN git clone https://github.com/overviewer/Minecraft-Overviewer.git .
-RUN python2 setup.py build
+RUN python3 setup.py build
 
 COPY start-overviewer.sh /
 RUN chmod 766 /start-overviewer.sh
