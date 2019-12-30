@@ -10,8 +10,7 @@ RUN apt-get update && \
     echo "deb http://overviewer.org/debian ./" >> /etc/apt/sources.list && \
     apt-get update
 
-RUN apt-get install -y --force-yes \
-    minecraft-overviewer
+RUN apt-get install -y --force-yes --allow-unauthenticated minecraft-overviewer
 
 COPY start-overviewer.sh /
 RUN chmod 766 /start-overviewer.sh
