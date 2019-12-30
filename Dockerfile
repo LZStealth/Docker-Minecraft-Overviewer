@@ -4,8 +4,8 @@ ENV MINECRAFT_DOWNLOAD_URL=https://launcher.mojang.com/v1/objects/8c325a0c5bd674
 ENV RENDER=true
 ENV POI=true
 
-RUN apt-get update 
-RUN wget https://overviewer.org/builds/deb64/97/overviewer-0.15.2.deb
+RUN apt-get update && apt install curl
+RUN cURL https://overviewer.org/builds/deb64/97/overviewer-0.15.2.deb
 RUN apt-get install -f /overviewer-0.15.2.deb
 
 COPY start-overviewer.sh /
