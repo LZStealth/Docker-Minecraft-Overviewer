@@ -18,9 +18,9 @@ RUN mkdir /tmp/overviewer
 WORKDIR /tmp/overviewer
 
 RUN wget -O overviewer.tar.gz https://github.com/overviewer/Minecraft-Overviewer/archive/v0.15.0.tar.gz
-RUN tar -xzf overviewer.tar.gz \
-    cd Minecraft-Overviewer-0.15.0 \
-    cp -r * /
+RUN tar -xzf overviewer.tar.gz
+RUN cd Minecraft-Overviewer-0.15.0
+RUN cp -r ./* /
 RUN python3 setup.py build
 
 COPY start-overviewer.sh /
