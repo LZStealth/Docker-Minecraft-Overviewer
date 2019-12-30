@@ -17,7 +17,8 @@ RUN apt-get update && \
 RUN mkdir /tmp/overviewer
 WORKDIR /tmp/overviewer
 
-RUN git clone https://github.com/overviewer/Minecraft-Overviewer.git .
+RUN wget -O overviewer.tar.gz https://github.com/overviewer/Minecraft-Overviewer/archive/v0.15.0.tar.gz
+RUN tar -xzf overviewer.tar.gz
 RUN python3 setup.py build
 
 COPY start-overviewer.sh /
