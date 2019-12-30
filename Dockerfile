@@ -1,15 +1,24 @@
 FROM ubuntu:18.04
 
-ENV MINECRAFT_DOWNLOAD_URL=https://launcher.mojang.com/v1/objects/8c325a0c5bd674dd747d6ebaa4c791fd363ad8a9/client.jar
+ENV MINECRAFT_DOWNLOAD_URL=https://launcher.mojang.com/v1/objects/8b11614bea9293592a947ea8f4fd72981ea66677/client.jar
 ENV RENDER=true
 ENV POI=true
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list && \
-    echo "deb http://overviewer.org/debian ./" >> /etc/apt/sources.list && \
-    apt-get update
+RUN apt-get update && \
+    apt-get update && apt-get install -y \
+    build-essential \
+    python3-pil \
+    python3-dev \
+    python3-numpy \
+    git \
+    wget \
+&& rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install -y --force-yes \
-    minecraft-overviewer
+RUN mkdir /tmp/overviewer
+WORKDIR /tmp/overviewer
+
+RUN git clone https://github.com/overviewer/Minecraft-Overviewer.git .
+RUN python3 setup.py build
 
 COPY start-overviewer.sh /
 RUN chmod 766 /start-overviewer.sh
