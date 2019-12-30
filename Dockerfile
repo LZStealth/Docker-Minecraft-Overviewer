@@ -5,22 +5,13 @@ ENV RENDER=true
 ENV POI=true
 
 RUN apt-get update && \
-    apt-get update && apt-get install -y \
-    build-essential \
-    python3-pil \
-    python3-dev \
-    python3-numpy \
-    git \
-    wget \
-&& rm -rf /var/lib/apt/lists/*
+    apt-get install -y wget && \
+    echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list && \
+    echo "deb http://overviewer.org/debian ./" >> /etc/apt/sources.list && \
+    apt-get update
 
-RUN mkdir /tmp/overviewer
-WORKDIR /tmp/overviewer
-
-RUN wget -O overviewer.tar.gz https://github.com/overviewer/Minecraft-Overviewer/archive/v0.15.0.tar.gz
-RUN tar -xzf overviewer.tar.gz
-RUN cp -r ./Minecraft-Overviewer-0.15.0/* /
-RUN python3 setup.py build
+RUN apt-get install -y --force-yes \
+    minecraft-overviewer
 
 COPY start-overviewer.sh /
 RUN chmod 766 /start-overviewer.sh
