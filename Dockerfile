@@ -5,7 +5,7 @@ ENV RENDER=true
 ENV POI=true
 
 RUN apt-get update && apt -y install curl
-RUN cURL https://overviewer.org/builds/deb64/97/overviewer-0.15.2.deb
+RUN curl https://overviewer.org/builds/deb64/97/overviewer-0.15.2.deb
 RUN apt-get -y install -f /overviewer-0.15.2.deb
 
 COPY start-overviewer.sh /
