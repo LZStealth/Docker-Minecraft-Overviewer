@@ -4,13 +4,9 @@ ENV MINECRAFT_DOWNLOAD_URL=https://launcher.mojang.com/v1/objects/8c325a0c5bd674
 ENV RENDER=true
 ENV POI=true
 
-RUN apt-get update && \
-    apt-get install -y wget && \
-    echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list && \
-    echo "deb http://overviewer.org/debian ./" >> /etc/apt/sources.list && \
-    apt-get update
-
-RUN apt-get install -y --force-yes --allow-unauthenticated minecraft-overviewer
+RUN apt-get update 
+RUN wget https://overviewer.org/builds/deb64/97/overviewer-0.15.2.deb
+RUN apt-get install -f /overviewer-0.15.2.deb
 
 COPY start-overviewer.sh /
 RUN chmod 766 /start-overviewer.sh
