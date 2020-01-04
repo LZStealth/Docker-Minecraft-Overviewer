@@ -2,7 +2,8 @@ FROM ubuntu:18.04
 
 ENV MINECRAFT_DOWNLOAD_URL=https://launcher.mojang.com/v1/objects/8b11614bea9293592a947ea8f4fd72981ea66677/client.jar
 ENV RENDER=true
-ENV POI=true
+ENV POI=false
+ENV FORCERENDER=false
 
 RUN apt-get update && \
     apt-get update && apt-get install -y \
