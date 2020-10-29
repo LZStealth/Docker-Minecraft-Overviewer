@@ -19,6 +19,7 @@ RUN mkdir /tmp/overviewer
 WORKDIR /tmp/overviewer
 
 RUN wget https://api.github.com/repos/overviewer/Minecraft-Overviewer/zipball/v0.16.0
+RUN unzip overviewer-*
 RUN mv overviewer-*/* /tmp/overviewer
 RUN python3 setup.py build
 COPY start-overviewer.sh /
