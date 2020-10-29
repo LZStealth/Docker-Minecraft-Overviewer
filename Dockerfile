@@ -13,6 +13,7 @@ RUN apt-get update && \
     python3-numpy \
     git \
     wget \
+    unzip \
 && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /tmp/overviewer
