@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 ENV VERSION 0.16.0
-ENV MINECRAFT_DOWNLOAD_URL=https://launcher.mojang.com/v1/objects/c9abbe8ee4fa490751ca70635340b7cf00db83ff/client.jar
+ENV MINECRAFT_DOWNLOAD_URL=https://launcher.mojang.com/v1/objects/1321521b2caf934f7fc9665aab7e059a7b2bfcdf/client.jar
 ENV RENDER=true
 ENV POI=false
 ENV FORCERENDER=false
