@@ -21,7 +21,7 @@ RUN apt-get update && \
 RUN mkdir /tmp/overviewer
 WORKDIR /tmp/overviewer
 
-RUN curl -o overviewer.zip https://github.com/overviewer/Minecraft-Overviewer/archive/v${VERSION}.zip
+RUN curl -L -o overviewer.zip https://github.com/overviewer/Minecraft-Overviewer/archive/v${VERSION}.zip
 RUN unzip overviewer.zip
 RUN mv Minecraft-Overviewer-${VERSION}/* /tmp/overviewer
 RUN python3 setup.py build
