@@ -6,20 +6,12 @@ ENV POI=false
 ENV FORCERENDER=false
 
 RUN apt-get update && \
-    apt-get update && apt-get install -y \
-    build-essential \
-    python3-pil \
-    python3-dev \
-    python3-numpy \
-    git \
-    wget \
-&& rm -rf /var/lib/apt/lists/*
-
-RUN mkdir /tmp/overviewer
-WORKDIR /tmp/overviewer
-
-RUN git clone https://github.com/overviewer/Minecraft-Overviewer.git .
-RUN python3 setup.py build
+    apt-get install -y --no-install-recommends ca-certificates wget gnupg optipng && \
+    echo "deb http://overviewer.org/debian ./" >> /etc/apt/sources.list && \
+    wget -O - https://overviewer.org/debian/overviewer.gpg.asc | apt-key add - && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends minecraft-overviewer && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY start-overviewer.sh /
 RUN chmod 766 /start-overviewer.sh
