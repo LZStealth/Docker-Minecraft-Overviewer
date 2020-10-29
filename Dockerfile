@@ -6,13 +6,21 @@ ENV POI=false
 ENV FORCERENDER=false
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends ca-certificates wget gnupg optipng && \
-    echo "deb http://overviewer.org/debian ./" >> /etc/apt/sources.list && \
-    wget -O - https://overviewer.org/debian/overviewer.gpg.asc | apt-key add - && \
-    apt-get update && \
-    apt-get install -y --no-install-recommends minecraft-overviewer && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    apt-get update && apt-get install -y \
+    build-essential \
+    python3-pil \
+    python3-dev \
+    python3-numpy \
+    git \
+    wget \
+&& rm -rf /var/lib/apt/lists/*
 
+RUN mkdir /tmp/overviewer
+WORKDIR /tmp/overviewer
+
+RUN wget https://api.github.com/repos/overviewer/Minecraft-Overviewer/zipball/v0.16.0
+RUN mv overviewer-*/* /tmp/overviewer
+RUN python3 setup.py build
 COPY start-overviewer.sh /
 RUN chmod 766 /start-overviewer.sh
 
