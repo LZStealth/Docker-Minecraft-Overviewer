@@ -8,6 +8,7 @@ ENV FORCERENDER=false
 RUN apt-get update && \
     apt-get update && apt-get install -y \
     build-essential \
+    curl \
     python3-pil \
     python3-dev \
     python3-numpy \
@@ -19,8 +20,8 @@ RUN apt-get update && \
 RUN mkdir /tmp/overviewer
 WORKDIR /tmp/overviewer
 
-RUN wget https://api.github.com/repos/overviewer/Minecraft-Overviewer/zipball/v0.16.0
-RUN unzip overviewer-*
+RUN curl -o overviewer.zip https://api.github.com/repos/overviewer/Minecraft-Overviewer/zipball/v0.16.0
+RUN unzip overviewer.zip
 RUN mv overviewer-*/* /tmp/overviewer
 RUN python3 setup.py build
 COPY start-overviewer.sh /
