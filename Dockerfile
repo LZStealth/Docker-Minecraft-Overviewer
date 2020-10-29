@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
 
+ENV VERSION 0.16.0
 ENV MINECRAFT_DOWNLOAD_URL=https://launcher.mojang.com/v1/objects/c9abbe8ee4fa490751ca70635340b7cf00db83ff/client.jar
 ENV RENDER=true
 ENV POI=false
@@ -20,7 +21,7 @@ RUN apt-get update && \
 RUN mkdir /tmp/overviewer
 WORKDIR /tmp/overviewer
 
-RUN curl -o overviewer.zip https://github.com/overviewer/Minecraft-Overviewer/archive/v0.16.0.zip
+RUN curl -L -o overviewer.zip https://github.com/overviewer/Minecraft-Overviewer/archive/v${VERSION}.zip
 RUN unzip overviewer.zip
 RUN mv Minecraft-Overviewer-${VERSION}/* /tmp/overviewer
 RUN python3 setup.py build
