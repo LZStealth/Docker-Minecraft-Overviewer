@@ -20,7 +20,7 @@ WORKDIR /tmp/overviewer
 RUN git clone https://github.com/overviewer/Minecraft-Overviewer.git .
 RUN python3 setup.py build
 COPY start-overviewer.sh /
-COPY mcVerisionGet.py /
+COPY mcVersionGet.py /
 RUN chmod 766 /start-overviewer.sh
 
 ENTRYPOINT ["/bin/bash", "-c", "/start-overviewer.sh"]
