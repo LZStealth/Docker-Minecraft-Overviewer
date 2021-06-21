@@ -4,9 +4,10 @@ ENV RENDER=true
 ENV POI=false
 ENV FORCERENDER=false
 
-RUN echo "deb https://overviewer.org/debian ./" >> /etc/apt/sources.list
-RUN wget -O - https://overviewer.org/debian/overviewer.gpg.asc | sudo apt-key add -
-RUN apt-get update
+RUN echo "deb https://overviewer.org/debian ./" >> /etc/apt/sources.list && \
+    apt-get install wget && \
+    wget -O - https://overviewer.org/debian/overviewer.gpg.asc | apt-key add - && \
+    apt-get update
 
 RUN apt-get install -y --force-yes \
     minecraft-overviewer
