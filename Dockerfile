@@ -4,8 +4,8 @@ ENV RENDER=true
 ENV POI=false
 ENV FORCERENDER=false
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list && \
-    echo "deb http://overviewer.org/debian ./" >> /etc/apt/sources.list && \
+RUN echo "deb https://overviewer.org/debian ./" >> /etc/apt/sources.list && \
+    wget -O - https://overviewer.org/debian/overviewer.gpg.asc | sudo apt-key add - && \
     apt-get update
 
 RUN apt-get install -y --force-yes \
