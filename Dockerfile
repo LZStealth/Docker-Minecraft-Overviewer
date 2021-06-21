@@ -5,7 +5,7 @@ ENV POI=false
 ENV FORCERENDER=false
 
 RUN echo "deb https://overviewer.org/debian ./" >> /etc/apt/sources.list && \
-    apt-get install --reinstall ca-certificates && \
+    apt-get install -y ca-certificates && \
     apt-get update && \
     apt-get install wget
 
