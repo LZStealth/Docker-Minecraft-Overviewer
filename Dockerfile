@@ -5,8 +5,9 @@ ENV POI=false
 ENV FORCERENDER=false
 
 RUN echo "deb https://overviewer.org/debian ./" >> /etc/apt/sources.list && \
-    apt-get install -y ca-certificates && \
     apt-get update && \
+    apt-get install -y ca-certificates && \
+    update-ca-certificates && \
     apt-get install wget
 
 RUN wget -O - https://overviewer.org/debian/overviewer.gpg.asc | apt-key add - && \
