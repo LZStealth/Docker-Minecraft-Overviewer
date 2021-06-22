@@ -1,16 +1,7 @@
-FROM ubuntu:18.04
+FROM ubuntu:14.04
 
-ENV RENDER=true
-ENV POI=false
-ENV FORCERENDER=false
-
-RUN echo "deb https://overviewer.org/debian ./" >> /etc/apt/sources.list && \
-    apt-get update && \
-    apt-get install -y ca-certificates && \
-    update-ca-certificates && \
-    apt-get install wget
-
-RUN wget -O - https://overviewer.org/debian/overviewer.gpg.asc | apt-key add - && \
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list && \
+    echo "deb http://overviewer.org/debian ./" >> /etc/apt/sources.list && \
     apt-get update
 
 RUN apt-get install -y --force-yes \
