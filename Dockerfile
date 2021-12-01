@@ -18,7 +18,7 @@ RUN mkdir /versions
 RUN mkdir /tmp/overviewer
 WORKDIR /tmp/overviewer
 
-RUN git clone https://github.com/overviewer/Minecraft-Overviewer.git .
+RUN git clone https://github.com/26/Minecraft-Overviewer .
 RUN python3 setup.py build
 COPY start-overviewer.sh /
 COPY mcVersionGet.py /
