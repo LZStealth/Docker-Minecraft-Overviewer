@@ -1,3 +1,8 @@
+> [!NOTE]
+> Overviewer has been discontinued in 2023 ([news](https://overviewer.org/blog/2023/5/9/the-end/)). Consider switching to a newer mapping application such as [Bluemap](https://bluemap.bluecolored.de/) which works as both a plugin and a standalone webapp.
+
+
+
 # Minecraft Overviewer
 
 Generate a Google Maps like map of your minecraft world.  Documentation for overview can be
